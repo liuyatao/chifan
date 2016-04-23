@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Chifan:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Chifan.war">
+      <element id="artifact" artifact-name="Chifan:war exploded" />
+    </root>
+  </artifact>
+</component>

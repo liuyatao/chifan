@@ -1,4 +1,4 @@
-package com.lyt.love.zyf.chifan.domain;
+package com.lyt.sample.chifan.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

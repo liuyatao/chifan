@@ -1,4 +1,4 @@
-package com.lyt.love.zyf.chifan.controller;
+package com.lyt.sample.chifan.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

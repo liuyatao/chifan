@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - chifan@localhost" uuid="fc36cb7e-b630-440a-aa45-084d15afbfd1">
-    <database-info product="MySQL" version="5.6.26-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.6.28-0ubuntu0.15.10.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="chifan"/>
-    <table name="charge" schema="" catalog="chifan" type="TABLE">
-      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-    </table>
-    <table name="order" schema="" catalog="chifan" type="TABLE">
-      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MCDlhYXlgLwgMSDmtojotLk=" autoIncrement="true"/>
-      <column name="Date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="Number" sqlType="FLOAT" precision="11" scale="0" nullable="true" jdbcType="7"/>
-      <column name="UserName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="Type" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-    </table>
-    <table name="user" schema="" catalog="chifan" type="TABLE">
-      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="UserName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-    </table>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="chifan"/>
+      <table id="2" parent="1" name="charge"/>
+      <table id="3" parent="1" name="order"/>
+      <table id="4" parent="1" name="user"/>
+      <column id="5" parent="2" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <key id="6" parent="2" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="7" parent="3" name="ID">
+        <comment>0 充值 1 消费</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="8" parent="3" name="Date">
+        <data-type>date</data-type>
+      </column>
+      <column id="9" parent="3" name="Number">
+        <data-type>float(11)</data-type>
+      </column>
+      <column id="10" parent="3" name="UserName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="11" parent="3" name="Type">
+        <data-type>int(255)</data-type>
+      </column>
+      <key id="12" parent="3" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="13" parent="4" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="4" name="UserName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="15" parent="4" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
 </component>

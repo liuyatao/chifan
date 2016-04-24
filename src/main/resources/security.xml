@@ -7,13 +7,14 @@
        http://www.springframework.org/schema/security
        http://www.springframework.org/schema/security/spring-security.xsd">
        <security:http auto-config="true">
-              <security:intercept-url pattern="/test" access="hasRole('ROLE_USER')"></security:intercept-url>
+              <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"></security:intercept-url>
+              <security:form-login login-page="/login"/>
        </security:http>
 
        <security:authentication-manager>
               <security:authentication-provider>
                      <security:user-service>
-                            <security:user name="lyt" authorities="ROLE_USER"/>
+                            <security:user name="lyt"  password="lyt" authorities="ROLE_USER"/>
                      </security:user-service>
               </security:authentication-provider>
        </security:authentication-manager>

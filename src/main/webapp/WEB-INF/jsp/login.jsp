@@ -1,55 +1,68 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: liuyatao
-  Date: 16-4-24
-  Time: 下午7:25
-  To change this template use File | Settings | File Templates.
+  创建人: 刘亚涛
+  创建时间： 2016/2/25 15:52
+  说明：
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>登陆</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="statics/css/vux.css">
-    <script src="statics/js/vue.min.1.0.18.js"></script>
-    <style type="text/css">
-        button{
-            margin: 2em;
-        }
-        #btn
-        {
-            padding: 2em;
+    <%--  <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="statics/css/materialize.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style type="text/css">
+        .card-panel{
+            margin-top: 50%;
         }
-        #demo
-        { margin-top: 4em;}
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6 offset-m3 l4 offset-l4">
+            <div class="card-panel">
+                <form action="/login" method="post">
+                    <c:if test="${param.error != null}">
+                        <p>
+                            Invalid username and password.
+                        </p>
+                    </c:if>
+                    <c:if test="${param.logout != null}">
+                        <p>
+                            You have been logged out.
+                        </p>
+                    </c:if>
+                    <p>
+                        <label for="username">请输入用户名</label>
+                        <input type="text" id="username" name="username"/>
+                    </p>
 
-<form id="demo">
-    <group>
-        <x-input title="用户名：" placeholder="请输入用户名"></x-input>
-        <x-input title="密码：" placeholder="请输入密码"></x-input>
-    </group>
-    <div id="btn">
-        <input type="submit" class="weui_btn weui_btn_primary" value="登陆"/>
+                    <p>
+                        <label for="password">请输入密码</label>
+                        <input type="password" id="password" name="password"/>
+                    </p>
+                    <input type="hidden"
+                           name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
+                    <button type="submit" class="btn">登陆</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-</form>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="statics/js/jquery-2.2.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="statics/js/materialize.min.js"></script>
 
-<script src="statics/components/group/index.js"></script>
-<script src="statics/components/cell/index.js"></script>
-<script src="statics/components/x-input/index.js"></script>
-<script src="statics/components/x-button/index.js"></script>
 
-<script>
-    Vue.component('group', vuxGroup)
-    Vue.component('cell', vuxCell)
-    Vue.component('x-input', vuxXInput)
-    new Vue({
-        el: '#demo'
-    })
-</script>
 </body>
 </html>
+

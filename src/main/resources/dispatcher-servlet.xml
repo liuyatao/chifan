@@ -14,6 +14,8 @@
               <property name="order" value="1"/>
        </bean>
 
+       <mvc:resources mapping="/statics/**" location="WEB-INF/statics/"/>
+
 
 
 </beans>

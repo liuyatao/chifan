@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登陆</title>
+    <title>凑钱吃饭</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +16,14 @@
 </head>
 <body>
 
-<nav class="z-depth-1">
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">凑钱吃饭</a>
-    </div>
-</nav>
+<div class="navbar-fixed">
+    <nav class="z-depth-1">
+        <div class="nav-wrapper z-depth-1">
+            <a href="#" class="brand-logo center">凑钱吃饭</a>
+        </div>
+    </nav>
+</div>
+
 
 <div class="container" id="container">
     <div class="row">
@@ -33,7 +36,7 @@
             </ul>
         </div>
         <div id="test1" class="col s12">
-            <blockquote>当前总资产为：{{sum}}</blockquote>
+            <blockquote>当前总资产为：<h4 class="materialize-red-text text-lighten-2">{{sum}}</h4></blockquote>
             <div class="row">
                 <div class="input-field col s12">
                     <input type="number" id="consumeNumber" v-model="totalConsume">
@@ -64,7 +67,7 @@
             </div>
         </div>
         <div id="test2" class="col s12">
-            <blockquote>当前总资产为：{{sum}}</blockquote>
+            <blockquote>当前总资产为：<h4 class="materialize-red-text text-lighten-2">{{sum}}</h4></blockquote>
             <table class="centered">
                 <thead>
                 <tr>
@@ -126,14 +129,13 @@
 
                 <tbody>
                 <tr v-for="item in MonthOrder">
-                    <th>{{item.type}}</th>
+                    <th>{{getType($index)}}</th>
                     <td>{{item.money}}</td>
                     <td>{{item.date}}</td>
                     <td>{{item.users}}</td>
                 </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
@@ -144,8 +146,6 @@
     new Vue({
         el: '#container',
         computed:{
-            getType:function(index){
-            },
             getTotalCharge:function(){
                 var totalCharge=0;
                 for(var i=0;i<this.personalTotalList.length;i++){
@@ -159,7 +159,8 @@
                 this.totalConsume=this.totalConsume==null?0:this.totalConsume
                 this.everyConsume=this.totalConsume/this.personalTotalList.length
                 return this.totalConsume/this.personalTotalList.length;
-            }
+            },
+
 
         },
         data: {
@@ -174,7 +175,14 @@
             everyConsume:'',
             /*总消费*/
             totalConsume:'',
-            MonthOrder:''
+            MonthOrder:'',
+            getType:function(index){
+                if(this.MonthOrder[index].type==0){
+                    return '充值'
+                }else if(this.MonthOrder[index].type==1){
+                    return '消费'
+                }
+            },
         },
         methods: {
             addUser:function(){
@@ -228,6 +236,7 @@
                         Materialize.toast('充值成功',2000)
                         _self.getAllUserInfor();
                         _self.Sum();
+                        _self.monthOrder();
                     }else{
                         Materialize.toast('充值失败'+result.msg,2000)
                     }
@@ -262,6 +271,7 @@
                         Materialize.toast('消费成功',2000);
                         _self.getAllUserInfor();
                         _self.Sum();
+                        _self.monthOrder();
 
                     }else{
                         Materialize.toast('消费失败'+result.msg,2000);

@@ -12,6 +12,7 @@
               <security:intercept-url pattern="/statics/**" access="permitAll"/>
               <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"></security:intercept-url>
               <security:form-login login-page="/login"/>
+              <security:csrf disabled="true"></security:csrf>
        </security:http>
 
        <security:authentication-manager>

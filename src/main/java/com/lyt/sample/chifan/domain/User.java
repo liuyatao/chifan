@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by Administrator on 2016/4/23.
+ * Created by Administrator on 2016/4/25.
  */
 @Entity
 public class User {
@@ -14,7 +14,7 @@ public class User {
     private String userName;
 
     @Id
-    @Column(name = "ID", nullable = false, insertable = true, updatable = true)
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
@@ -24,7 +24,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "UserName", nullable = true, insertable = true, updatable = true, length = 255)
+    @Column(name = "UserName")
     public String getUserName() {
         return userName;
     }

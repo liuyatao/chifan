@@ -5,14 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by Administrator on 2016/4/23.
+ * Created by Administrator on 2016/4/25.
  */
 @Entity
 public class Charge {
     private int id;
 
     @Id
-    @Column(name = "ID", nullable = false, insertable = true, updatable = true)
+    @Column(name = "ID")
     public int getId() {
         return id;
     }

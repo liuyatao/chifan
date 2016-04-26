@@ -25,9 +25,13 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://192.168.1.13:3306/chifan"/>
-        <property name="user" value="3599428c-a6ec"/>
-        <property name="password" value="ab3fb6c4-0989"/>
+        <property name="jdbcUrl" value="jdbc:mysql:/192.168.1.13:3306/chifan"/>
+        <property name="user" value="3bce9fe7-3b76"/>
+        <property name="password" value="8dc7f6a9-00b3"/>
+<!--
+            <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/chifan"/>
+      <property name="user" value="root"/>
+      <property name="password" value="root"/>-->
     </bean>
 
     <!--实体管理-->

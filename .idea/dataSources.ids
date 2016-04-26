@@ -19,7 +19,7 @@
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <primary-key name="PRIMARY" columns="ID"/>
     </table>
-    <table name="main_order" schema="" catalog="chifan" type="TABLE">
+    <table name="mainorder" schema="" catalog="chifan" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="money" sqlType="DOUBLE" precision="11" scale="0" nullable="true" jdbcType="8"/>
       <column name="Category" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -28,7 +28,7 @@
     </table>
     <table name="theorder" schema="" catalog="chifan" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MCDlhYXlgLwgMSDmtojotLk=" autoIncrement="true"/>
-      <column name="Number" sqlType="DOUBLE" precision="11" scale="0" nullable="true" jdbcType="8"/>
+      <column name="Number" sqlType="DOUBLE" precision="11" scale="2" nullable="true" jdbcType="8"/>
       <column name="UserName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="MainID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="Category" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>

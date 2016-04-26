@@ -7,7 +7,6 @@ import java.util.Date;
  * Created by Administrator on 2016/4/25.
  */
 @Entity
-@Table(name = "main_order", schema = "", catalog = "chifan")
 public class MainOrder {
     private int id;
     private Double money;

@@ -16,13 +16,13 @@
 </head>
 <body>
 
-<div class="navbar-fixed">
+<%--<div class="navbar-fixed">
     <nav class="z-depth-1">
         <div class="nav-wrapper z-depth-1">
             <a href="#" class="brand-logo center">凑钱吃饭</a>
         </div>
     </nav>
-</div>
+</div>--%>
 
 
 <div class="container" id="container">

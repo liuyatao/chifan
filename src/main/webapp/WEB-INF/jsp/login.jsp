@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style type="text/css">
         .card-panel{
-            margin-top: 50%;
+            margin-top: 20%;
         }
     </style>
 </head>

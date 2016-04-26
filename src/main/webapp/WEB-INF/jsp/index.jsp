@@ -16,13 +16,13 @@
 </head>
 <body>
 
-<%--<div class="navbar-fixed">
+<div class="navbar-fixed">
     <nav class="z-depth-1">
         <div class="nav-wrapper z-depth-1">
             <a href="#" class="brand-logo center">凑钱吃饭</a>
         </div>
     </nav>
-</div>--%>
+</div>
 
 
 <div class="container" id="container">
@@ -57,7 +57,7 @@
                     <td>{{item.userName}}</td>
                     <td>{{item.remainder}}</td>
                     <td>{{getEveryConsume}}</td>
-                    <th><button class="modal-trigger btn" v-on:click="unConsume($index)">不消费</button></th>
+                    <th><button class="modal-trigger btn" v-on:click="unConsume($index)">删除</button></th>
                 </tr>
                 </tbody>
             </table>
@@ -159,8 +159,7 @@
                 this.totalConsume=this.totalConsume==null?0:this.totalConsume
                 this.everyConsume=this.totalConsume/this.personalTotalList.length
                 return this.totalConsume/this.personalTotalList.length;
-            },
-
+            }
 
         },
         data: {
@@ -182,7 +181,7 @@
                 }else if(this.MonthOrder[index].type==1){
                     return '消费'
                 }
-            },
+            }
         },
         methods: {
             addUser:function(){
